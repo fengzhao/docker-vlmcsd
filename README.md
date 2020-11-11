@@ -28,6 +28,9 @@ $ sudo docker run -d -p  1688:1688 --restart=always --name kms-server \
 
 ## To view docker log:
 Now (thanks to embii74) vlmcsd process send logs to docker.
+
+查看容器日志
+
 > $ docker logs vlmcsd (change 'vlmcsd' with the docker's name)
 
 
