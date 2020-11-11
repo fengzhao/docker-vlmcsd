@@ -1,41 +1,20 @@
-# 微软KMS激活
+# vlmcsd is a replacement for Microsoft's KMS server.
 
+> It contains vlmcs, a KMS test client, mainly for debugging purposes, that also can "charge" a genuine KMS server designed to run on an always-on or often-on device, e.g. router, NAS Box, ...intended to help people who lost activation of their legally-owned licenses, e.g. due to a change of hardware (motherboard, CPU, ...)
+  
+> vlmcsd is not a one-click activation or crack tool intended to activate illegal copies of software (Windows, Office, Project, Visio)
 
+## Info / About this docker
+Docker based in Alpine OS with vlmcsd compiled from "source" (Wind4 GitHub)
 
-## 简介
-
-以 Alpine OS 做为 base image , 从  [vlmcsd](https://github.com/Wind4/vlmcsd) 中 clone 代码，构建 docker image 
-
-
-
-## 服务器部署KMS
-
-
-
-
-
-```shell
-# 从dockerhub拉取镜像并运行容器
-$ sudo docker run -d -p 1688:1688 --restart=always --name  kms-server  chinafengzhao/vlmcsd
-
-# 从阿里云镜像仓库拉取镜像并运行容器
-$ sudo docker run -d -p  1688:1688 --restart=always --name kms-server \
-		registry.cn-shenzhen.aliyuncs.com/fengzhao/kms-server:latest 
-
-```
-
-
+## Server Usage:
+> $ docker run -d -p 1688:1688 --restart=always --name vlmcsd mikolatero/vlmcsd
 
 ## To view docker log:
 Now (thanks to embii74) vlmcsd process send logs to docker.
 > $ docker logs vlmcsd (change 'vlmcsd' with the docker's name)
 
-
-
-
-
-## 客户端激活
-
+## Client
 ### Windows
 >slmgr.vbs -upk  
 >slmgr.vbs -ipk XXXXX-XXXXX-XXXXX-XXXXX-XXXXX  
