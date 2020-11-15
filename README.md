@@ -15,7 +15,7 @@
 
 
 ```shell
-# 从dockerhub拉取镜像并运行容器
+#  从dockerhub拉取镜像并运行容器
 $ sudo docker run -d -p 1688:1688 --restart=always --name  kms-server  chinafengzhao/vlmcsd
 
 # 从阿里云镜像仓库拉取镜像并运行容器
@@ -32,6 +32,8 @@ Now (thanks to embii74) vlmcsd process send logs to docker.
 查看容器日志
 
 > $ docker logs vlmcsd (change 'vlmcsd' with the docker's name)
+>
+> 
 
 
 
