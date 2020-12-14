@@ -36,17 +36,17 @@ jobs:
   #         password: ${{ secrets.DOCKER_PASSWORD }}
   #         repository: my-docker-hub-namespace/my-docker-hub-repository
   #         tag_with_ref: true
-  # push_to_docker_registry:
-  #   name: Push Docker image to GitHub Packages
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - name: Check out the repo
-  #       uses: actions/checkout@v2
-  #     - name: Push to GitHub Packages
-  #       uses: docker/build-push-action@v2
-  #       with:
-  #         username: ${{ github.actor }}
-  #         password: ${{ secrets.GITHUB_TOKEN }}
-  #         registry: docker.pkg.github.com
-  #         repository: fengzhao/docker-vlmcsd/kms
-  #         tag_with_ref: true
+  push_to_docker_registry:
+    name: Push Docker image to GitHub Packages
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the repo
+        uses: actions/checkout@v2
+      - name: Push to GitHub Packages
+        uses: docker/build-push-action@v2
+        with:
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+          registry: docker.pkg.github.com
+          repository: fengzhao/docker-vlmcsd/kms
+          tag_with_ref: true
